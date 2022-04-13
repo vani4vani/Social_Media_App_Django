@@ -1,0 +1,16 @@
+{% extends 'App_Login/navbar.html' %}
+{% load crispy_forms_tags %}
+{% block title %} {{title}} {% endblock %}
+
+
+{% block body_block %}
+
+<form method="post" enctype="multipart/form-data">
+  {{ form|crispy }}
+  {% csrf_token %}
+  <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+{% endblock %}
